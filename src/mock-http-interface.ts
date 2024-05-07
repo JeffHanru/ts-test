@@ -23,6 +23,6 @@ export const httpGet = async (url : string) => {
     return { status: 200, body: JSON.stringify({ message }) };
   } 
   catch (err) {
-    return { status: 500, body: JSON.stringify({ message: err.message }) };
+    return { status: 500, body: JSON.stringify({ message: (err as Error).message }) };
   }
 };
